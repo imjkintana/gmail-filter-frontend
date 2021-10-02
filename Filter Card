@@ -1,0 +1,278 @@
+//The card where all the filters are managed
+
+function masterCardBuilder() {
+
+//Section 0 = Overall Ranking 
+
+    const section0TopDivider = CardService.newDivider();
+    
+    const section0TextParagraph = CardService.newTextParagraph()
+    .setText("1) Ranking Range");
+
+    const section0TextInput0 = CardService.newTextInput()
+        .setFieldName("rankingRange")
+        .setHint("Enter the number of your lowest desired ranking. Ex: '50' --> The top 50 Schools in the USA");
+
+    const section0CheckBox = CardService.newSelectionInput()
+              .setType(CardService.SelectionInputType.CHECK_BOX)
+              .setFieldName("checkBox0Status")
+              .addItem("Don't Include This Filter", "checkBox0", false);
+
+    const section0Content = CardService.newCardSection()
+        .addWidget(section0TopDivider)
+        .addWidget(section0TextParagraph)
+        .addWidget(section0TextInput0)
+        .addWidget(section0CheckBox);
+
+//Section 1 = Acceptance Rate
+
+    const section1TextParagraph = CardService.newTextParagraph()
+    .setText("2) Acceptance Rate");
+
+    const section1TextInput0 = CardService.newTextInput()
+        .setFieldName("minAcceptanceRate")
+        .setHint("Minimum Acceptance Rate");
+
+    const section1TextInput1 = CardService.newTextInput()
+        .setFieldName("maxAcceptanceRate")
+        .setHint("Maximum Acceptance Rate");
+
+    const section1CheckBox = CardService.newSelectionInput()
+              .setType(CardService.SelectionInputType.CHECK_BOX)
+              .setFieldName("checkBox1Status")
+              .addItem("Don't Include This Filter", "checkBox1", false);
+
+    const section1Content = CardService.newCardSection()
+        .addWidget(section1TextParagraph)
+        .addWidget(section1TextInput0)
+        .addWidget(section1TextInput1)
+        .addWidget(section1CheckBox);
+
+//Section 2 = Total Student Body Size
+
+    const section2TextParagraph = CardService.newTextParagraph()
+    .setText("3) Total Student Body Size");
+
+    const section2TextInput0 = CardService.newTextInput()
+        .setFieldName("minStudentBodySize")
+        .setHint("Minimum Student Body Size");
+
+    const section2TextInput1 = CardService.newTextInput()
+        .setFieldName("maxStudentBodySize")
+        .setHint("Maximum Student Body Size");
+
+    const section2CheckBox = CardService.newSelectionInput()
+              .setType(CardService.SelectionInputType.CHECK_BOX)
+              .setFieldName("checkBox2Status")
+              .addItem("Don't Include This Filter", "checkBox2", false);
+
+    const section2Content = CardService.newCardSection()
+        .addWidget(section2TextParagraph)
+        .addWidget(section2TextInput0)
+        .addWidget(section2TextInput1)
+        .addWidget(section2CheckBox);
+
+//Section 3 = SAT
+
+    const section3TextParagraph = CardService.newTextParagraph()
+    .setText("4) Average SAT Score");
+
+    const section3TextInput0 = CardService.newTextInput()
+        .setFieldName("minSATScore")
+        .setHint("Minimum SAT Score");
+
+    const section3TextInput1 = CardService.newTextInput()
+        .setFieldName("maxSATScore")
+        .setHint("Maximum SAT Score");
+
+    const section3CheckBox = CardService.newSelectionInput()
+              .setType(CardService.SelectionInputType.CHECK_BOX)
+              .setFieldName("checkBox3Status")
+              .addItem("Don't Include This Filter", "checkBox3", false);
+
+    const section3Content = CardService.newCardSection()
+        .addWidget(section3TextParagraph)
+        .addWidget(section3TextInput0)
+        .addWidget(section3TextInput1)
+        .addWidget(section3CheckBox);
+
+//Section 4 = ACT
+
+    const section4TextParagraph = CardService.newTextParagraph()
+    .setText("5) Average ACT Score");
+
+    const section4TextInput0 = CardService.newTextInput()
+        .setFieldName("minACTScore")
+        .setHint("Minimum ACT Score");
+
+    const section4TextInput1 = CardService.newTextInput()
+        .setFieldName("maxACTScore")
+        .setHint("Maximum ACT Score");
+
+    const section4CheckBox = CardService.newSelectionInput()
+              .setType(CardService.SelectionInputType.CHECK_BOX)
+              .setFieldName("checkBox4Status")
+              .addItem("Don't Include This Filter", "checkBox4", false);
+
+    const section4Content = CardService.newCardSection()
+        .addWidget(section4TextParagraph)
+        .addWidget(section4TextInput0)
+        .addWidget(section4TextInput1)
+        .addWidget(section4CheckBox);
+
+//Section 5 = State
+
+    const section5TextParagraph = CardService.newTextParagraph()
+    .setText("6) States");
+
+    const section5TextInput0 = CardService.newTextInput()
+        .setFieldName("stateList")
+        .setHint("Enter state abbreviations separated by commas. Ex = 'IL,NY,CA'")
+        .setMultiline(true);
+
+    const section5CheckBox = CardService.newSelectionInput()
+              .setType(CardService.SelectionInputType.CHECK_BOX)
+              .setFieldName("checkBox5Status")
+              .addItem("Don't Include This Filter", "checkBox5", false);
+
+
+    const section5Content = CardService.newCardSection()
+        .addWidget(section5TextParagraph)
+        .addWidget(section5TextInput0)
+        .addWidget(section5CheckBox);
+
+//Section 6 = Yearly Tuition
+
+    const section6TextParagraph = CardService.newTextParagraph()
+    .setText("7) Yearly Tuition");
+
+    const section6TextInput0 = CardService.newTextInput()
+        .setFieldName("maxYearlyTution")
+        .setHint("Maximum Yearly Tuition");
+
+    const section6CheckBox = CardService.newSelectionInput()
+              .setType(CardService.SelectionInputType.CHECK_BOX)
+              .setFieldName("checkBox6Status")
+              .addItem("Don't Include This Filter", "checkBox6", false);
+
+    const section6Content = CardService.newCardSection()
+        .addWidget(section6TextParagraph)
+        .addWidget(section6TextInput0)
+        .addWidget(section6CheckBox);
+
+//Section 7 = Number of Emails to Filter
+
+    const section7TextParagraph = CardService.newTextParagraph()
+    .setText("8) How many emails do you want sorted?");
+
+    const section7TextInput0 = CardService.newTextInput()
+        .setFieldName("numEmails")
+        .setValue("1000")
+        .setHint("Enter a positive integer");
+
+    const section7Content = CardService.newCardSection()
+        .addWidget(section7TextParagraph)
+        .addWidget(section7TextInput0);
+
+//Section 8? = School Name (must implement school database lookup feature)
+
+//Final Section = Filter
+
+    const filterButtonAction = CardService.newAction()
+        .setFunctionName('onFilterButtonPress');
+
+    const filterButton = CardService.newTextButton()
+        .setText('Filter')
+        .setOnClickAction(filterButtonAction)
+        .setTextButtonStyle(CardService.TextButtonStyle.FILLED);
+        
+    const finalSectionContent = CardService.newCardSection()
+        .addWidget(filterButton);
+
+//Where each filter section is added for building
+
+    const masterCard = CardService.newCardBuilder()
+        .addSection(section0Content)
+        .addSection(section1Content)
+        .addSection(section2Content)
+        .addSection(section3Content)
+        .addSection(section4Content)
+        .addSection(section5Content)
+        .addSection(section6Content)
+        .addSection(section7Content)
+        .addSection(finalSectionContent)
+        .build();
+
+   return masterCard;
+}
+
+function onFilterButtonPress(e) {
+    const inputs = e.formInputs;
+    const filters = {
+        optOutStatus: {
+          useRanking: inputs.checkBox0Status,
+          useAcceptanceRate: inputs.checkBox1Status,
+          useStudentBodySize: inputs.checkBox2Status,
+          useSATScore: inputs.checkBox3Status,
+          useACTScore: inputs.checkBox4Status,
+          useStates: inputs.checkBox5Status,
+          useTution: inputs.checkBox6Status
+        },
+        schoolRankings: {
+            lowestRanking: inputs.rankingRange
+        },
+        studentbodysize: {
+            min: inputs.minStudentBodySize,
+            max: inputs.maxStudentBodySize
+        },
+        acceptanceRate: {
+            min: inputs.minAcceptanceRate,
+            max: inputs.maxAcceptanceRate
+        },
+        sat: {
+            min: inputs.minSATScore,
+            max: inputs.maxSATScore
+        },
+        act: {
+            min: inputs.minACTScore,
+            max: inputs.maxACTScore
+        },
+        tuition: {
+            max: inputs.maxYearlyTution
+        }
+    }
+    
+    const requestBody = {
+        filters: filters,
+        domains: getEmails
+    };
+}
+
+
+
+function getEmails(){
+
+  const returnedEmailDomains = [];
+  const threads = GmailApp.getInboxThreads();
+
+  for(let i = 0; i < inputs.numEmails; i++){
+    const message = threads[i].getMessages()[0];
+
+		if(message.isUnread() && isCollegeEmail(message.getFrom())){
+			returnedEmailDomains.push(message.getFrom()); 
+		}
+  }
+  return returnedEmailDomains;
+}
+
+
+
+function isCollegeEmail(email){
+
+  const domain = email.substring(email.indexOf('@'), email.length); 
+  	
+	if(domain.indexOf('.edu') !== -1) {
+		return true
+	}
+	return false;
+}
