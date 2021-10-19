@@ -7,7 +7,7 @@
     "https://www.googleapis.com/auth/script.external_request"
   ],
   "gmail": {
-    "name": "DespamifierV2.0",
+    "name": "Despamifier",
     "logoUrl": "https://i.imgur.com/4K5x0sP.png",
     "homepageTrigger": {
       "enabled": true,
